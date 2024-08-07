@@ -17,7 +17,9 @@
   "dependencies": {
     "@langchain/core": "^0.2.18",
     "@langchain/openai": "^0.2.5",
+    "axios": "^1.7.3",
     "dotenv": "^16.4.5",
+    "https-proxy-agent": "^7.0.5",
     "langchain": "^0.2.11"
   }
 }
