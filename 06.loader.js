@@ -7,7 +7,6 @@ import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf'
 import { GithubRepoLoader } from '@langchain/community/document_loaders/web/github'
 import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio'
 import { SerpAPILoader } from '@langchain/community/document_loaders/web/serpapi'
-
 import ignore from 'ignore'
 
 // // 1.基本示例
@@ -33,16 +32,16 @@ import ignore from 'ignore'
 // const docs = await loader.load()
 // console.log(docs)
 
-// 5.github loader
-const loader = new GithubRepoLoader('https://github.com/RealKai42/qwerty-learner', {
-  branch: 'master',
-  recursive: false,
-  unknown: 'warn', // ??
-  ignorePaths: ['*.md', 'yarn.lock', '*.json'],
-  //   accessToken: process.env['GITHUB_TOKEN'],
-})
-const codes = await loader.load()
-console.log(codes)
+// // 5.github loader
+// const loader = new GithubRepoLoader('https://github.com/RealKai42/qwerty-learner', {
+//   branch: 'master',
+//   recursive: false,
+//   unknown: 'warn', // ??
+//   ignorePaths: ['*.md', 'yarn.lock', '*.json'],
+//   //   accessToken: process.env['GITHUB_TOKEN'],
+// })
+// const codes = await loader.load()
+// console.log(codes)
 
 // // 6.webloader
 // const loader = new CheerioWebBaseLoader('https://kaiyi.cool/blog/github-copilot')

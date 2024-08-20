@@ -15,22 +15,28 @@ importers:
     dependencies:
       '@langchain/community':
         specifier: ^0.2.27
-        version: 0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+        version: 0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
       '@langchain/core':
         specifier: ^0.2.18
-        version: 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+        version: 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       '@langchain/openai':
         specifier: ^0.2.5
-        version: 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
+        version: 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
       axios:
         specifier: ^1.7.3
         version: 1.7.3
       cheerio:
         specifier: ^1.0.0
         version: 1.0.0
+      chromadb:
+        specifier: ^1.8.1
+        version: 1.8.1(openai@4.53.2)
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
+      faiss-node:
+        specifier: ^0.5.1
+        version: 0.5.1
       https-proxy-agent:
         specifier: ^7.0.5
         version: 7.0.5
@@ -39,7 +45,7 @@ importers:
         version: 5.3.2
       langchain:
         specifier: ^0.2.11
-        version: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+        version: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
       pdf-parse:
         specifier: ^1.1.1
         version: 1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)
@@ -455,6 +461,14 @@ packages:
     resolution: {integrity: sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==}
     engines: {node: '>= 8.0.0'}
 
+  ansi-regex@5.0.1:
+    resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
+    engines: {node: '>=8'}
+
+  ansi-styles@4.3.0:
+    resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
+    engines: {node: '>=8'}
+
   ansi-styles@5.2.0:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
@@ -478,8 +492,17 @@ packages:
   binary-search@1.3.6:
     resolution: {integrity: sha512-nbE1WxOTTrUWIfsfZ4aHGYu5DOuNkbxGokjV6Z2kxfJK3uaAb8zNK1muzOeipoLHZjInT4Br88BHpzevc681xA==}
 
+  bindings@1.5.0:
+    resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+
+  bl@4.1.0:
+    resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
+
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+
+  buffer@5.7.1:
+    resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
   camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
@@ -491,6 +514,35 @@ packages:
   cheerio@1.0.0:
     resolution: {integrity: sha512-quS9HgjQpdaXOvsZz82Oz7uxtXiy6UIsIQcpBj7HRw2M63Skasm9qlDocAM7jNuaxdhpPU7c4kJN+gA5MCu4ww==}
     engines: {node: '>=18.17'}
+
+  chownr@1.1.4:
+    resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
+
+  chromadb@1.8.1:
+    resolution: {integrity: sha512-NpbYydbg4Uqt/9BXKgkZXn0fqpsh2Z1yjhkhKH+rcHMoq0pwI18BFSU2QU7Fk/ZypwGefW2AvqyE/3ZJIgy4QA==}
+    engines: {node: '>=14.17.0'}
+    peerDependencies:
+      '@google/generative-ai': ^0.1.1
+      cohere-ai: ^5.0.0 || ^6.0.0 || ^7.0.0
+      openai: ^3.0.0 || ^4.0.0
+    peerDependenciesMeta:
+      '@google/generative-ai':
+        optional: true
+      cohere-ai:
+        optional: true
+      openai:
+        optional: true
+
+  cliui@8.0.1:
+    resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
+    engines: {node: '>=12'}
+
+  color-convert@2.0.1:
+    resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
+    engines: {node: '>=7.0.0'}
+
+  color-name@1.1.4:
+    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
   combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
@@ -528,9 +580,21 @@ packages:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
 
+  decompress-response@6.0.0:
+    resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
+    engines: {node: '>=10'}
+
+  deep-extend@0.6.0:
+    resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
+    engines: {node: '>=4.0.0'}
+
   delayed-stream@1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
+
+  detect-libc@2.0.3:
+    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
+    engines: {node: '>=8'}
 
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
@@ -549,8 +613,14 @@ packages:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
 
+  emoji-regex@8.0.0:
+    resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
+
   encoding-sniffer@0.2.0:
     resolution: {integrity: sha512-ju7Wq1kg04I3HtiYIOrUrdfdDvkyO9s5XM8QAj/bN61Yo/Vb4vgJxy5vi4Yxk01gWHbrofpPtpxM8bKger9jhg==}
+
+  end-of-stream@1.4.4:
+    resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -563,8 +633,19 @@ packages:
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
+  expand-template@2.0.3:
+    resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
+    engines: {node: '>=6'}
+
   expr-eval@2.0.2:
     resolution: {integrity: sha512-4EMSHGOPSwAfBiibw3ndnP0AvjDWLsMvGOvWEZ2F96IGk0bIVdjQisOHxReSkE13mHcfbuCiXw+G4y0zv6N8Eg==}
+
+  faiss-node@0.5.1:
+    resolution: {integrity: sha512-zD8wobJn8C6OLWo68Unho+Ih8l6nSRB2w3Amj01a+xc4bsEvd2mBDLklAn7VocA9XO3WDvQL/bLpi5flkCn/XQ==}
+    engines: {node: '>= 14.0.0'}
+
+  file-uri-to-path@1.0.0:
+    resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
 
   flat@5.0.2:
     resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
@@ -590,6 +671,12 @@ packages:
     resolution: {integrity: sha512-0iirZp3uVDjVGt9p49aTaqjk84TrglENEDuqfdlZQ1roC9CWlPk6Avf8EEnZNcAqPonwkG35x4n3ww/1THYAeQ==}
     engines: {node: '>= 12.20'}
 
+  fs-constants@1.0.0:
+    resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
+
+  github-from-package@0.0.0:
+    resolution: {integrity: sha512-SyHy3T1v2NUXn29OsWdxmK6RwHD+vkj3v8en8AOBZ1wBQ/hCAQ5bAQTD02kW4W9tUp/3Qh6J8r9EvntiyCmOOw==}
+
   htmlparser2@9.1.0:
     resolution: {integrity: sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==}
 
@@ -604,12 +691,28 @@ packages:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
 
+  ieee754@1.2.1:
+    resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
+  inherits@2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+
+  ini@1.3.8:
+    resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
+
   is-any-array@2.0.1:
     resolution: {integrity: sha512-UtilS7hLRu++wb/WBAw9bNuP1Eg04Ivn1vERJck8zJthEvXCBEBpGR/33u/xLKWEQf95803oalHrVDptcAvFdQ==}
+
+  is-fullwidth-code-point@3.0.0:
+    resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
+    engines: {node: '>=8'}
+
+  isomorphic-fetch@3.0.0:
+    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
 
   js-tiktoken@1.0.12:
     resolution: {integrity: sha512-L7wURW1fH9Qaext0VzaUDpFGVQgjkdE3Dgsy9/+yXyGEpBKnylTd0mU0bfbNkKDlXRb6TEsZkwuflu1B8uQbJQ==}
@@ -833,6 +936,16 @@ packages:
     resolution: {integrity: sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==}
     engines: {node: '>= 0.6'}
 
+  mimic-response@3.1.0:
+    resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
+    engines: {node: '>=10'}
+
+  minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+
+  mkdirp-classic@0.5.3:
+    resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
+
   ml-array-mean@1.1.6:
     resolution: {integrity: sha512-MIdf7Zc8HznwIisyiJGRH9tRigg3Yf4FldW8DxKxpCCv/g5CafTw0RRu51nojVEOXuCQC7DRVVu5c7XXO/5joQ==}
 
@@ -858,6 +971,16 @@ packages:
     resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
     hasBin: true
 
+  napi-build-utils@1.0.2:
+    resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
+
+  node-abi@3.66.0:
+    resolution: {integrity: sha512-J3ygyG8cTcn5TVzpHYEBE6zHN4uVoj6wKMS946b19VYGhVpGgR5mB3OK2oBTe0l3Bpsj5/h+TAblq0K8Ec9cRQ==}
+    engines: {node: '>=10'}
+
+  node-addon-api@6.1.0:
+    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
+
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -880,6 +1003,9 @@ packages:
   num-sort@2.1.0:
     resolution: {integrity: sha512-1MQz1Ed8z2yckoBeSfkQHHO9K1yDRxxtotKSJ9yvcTUUxSvfvzEq5GwBrjjHEpMlq/k5gvXdmJ1SbYxWtpNoVg==}
     engines: {node: '>=8'}
+
+  once@1.4.0:
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
   openai@4.53.2:
     resolution: {integrity: sha512-ohYEv6OV3jsFGqNrgolDDWN6Ssx1nFg6JDJQuaBFo4SL2i+MBoOQ16n2Pq1iBF5lH1PKnfCIOfqAGkmzPvdB9g==}
@@ -917,18 +1043,73 @@ packages:
     resolution: {integrity: sha512-v6ZJ/efsBpGrGGknjtq9J/oC8tZWq0KWL5vQrk2GlzLEQPUDB1ex+13Rmidl1neNN358Jn9EHZw5y07FFtaC7A==}
     engines: {node: '>=6.8.1'}
 
+  prebuild-install@7.1.2:
+    resolution: {integrity: sha512-UnNke3IQb6sgarcZIDU3gbMeTp/9SSU1DAIkil7PrqG1vZlBtY5msYccSKSHDqa3hNg436IXK+SNImReuA1wEQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
+  pump@3.0.0:
+    resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
+
+  rc@1.2.8:
+    resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
+    hasBin: true
+
+  readable-stream@3.6.2:
+    resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
+    engines: {node: '>= 6'}
 
   retry@0.13.1:
     resolution: {integrity: sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==}
     engines: {node: '>= 4'}
 
+  safe-buffer@5.2.1:
+    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
+  semver@7.6.3:
+    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  simple-concat@1.0.1:
+    resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
+
+  simple-get@4.0.1:
+    resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
+
+  string-width@4.2.3:
+    resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
+    engines: {node: '>=8'}
+
+  string_decoder@1.3.0:
+    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
+
+  strip-ansi@6.0.1:
+    resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
+    engines: {node: '>=8'}
+
+  strip-json-comments@2.0.1:
+    resolution: {integrity: sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==}
+    engines: {node: '>=0.10.0'}
+
+  tar-fs@2.1.1:
+    resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
+
+  tar-stream@2.2.0:
+    resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
+    engines: {node: '>=6'}
+
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+
+  tunnel-agent@0.6.0:
+    resolution: {integrity: sha512-McnNiV1l8RYeY8tBgEpuodCC1mLUdbSN+CYBL7kJsJNInOP8UjDDEwdk6Mw60vdLLrr5NHKZhMAOSrR2NZuQ+w==}
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -936,6 +1117,9 @@ packages:
   undici@6.19.8:
     resolution: {integrity: sha512-U8uCCl2x9TK3WANvmBavymRzxbfFYG+tAu+fgx3zxQy3qdagQqBLwJVrdyO1TBfUXvfKveMKJZhpvUYoOjM+4g==}
     engines: {node: '>=18.17'}
+
+  util-deprecate@1.0.2:
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
   uuid@10.0.0:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
@@ -956,12 +1140,22 @@ packages:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
 
+  whatwg-fetch@3.6.20:
+    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
+
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
     engines: {node: '>=18'}
 
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+
+  wrap-ansi@7.0.0:
+    resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
+    engines: {node: '>=10'}
+
+  wrappy@1.0.2:
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
   yaml@2.5.0:
     resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
@@ -978,21 +1172,23 @@ packages:
 
 snapshots:
 
-  '@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))':
+  '@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))':
     dependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
-      '@langchain/openai': 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
+      '@langchain/core': 0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      '@langchain/openai': 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
       binary-extensions: 2.3.0
       expr-eval: 2.0.2
       flat: 5.0.2
       js-yaml: 4.1.0
-      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
-      langsmith: 0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+      langsmith: 0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       uuid: 10.0.0
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
       cheerio: 1.0.0
+      chromadb: 1.8.1(openai@4.53.2)
+      faiss-node: 0.5.1
       ignore: 5.3.2
       pdf-parse: 1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)
     transitivePeerDependencies:
@@ -1014,13 +1210,13 @@ snapshots:
       - peggy
       - pyodide
 
-  '@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
+  '@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langsmith: 0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       ml-distance: 4.0.1
       mustache: 4.2.0
       p-queue: 6.6.2
@@ -1032,13 +1228,13 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
+  '@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
     dependencies:
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.12
-      langsmith: 0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langsmith: 0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       mustache: 4.2.0
       p-queue: 6.6.2
       p-retry: 4.6.2
@@ -1049,9 +1245,9 @@ snapshots:
       - langchain
       - openai
 
-  '@langchain/openai@0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))':
+  '@langchain/openai@0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))':
     dependencies:
-      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       js-tiktoken: 1.0.12
       openai: 4.53.2
       zod: 3.23.8
@@ -1060,9 +1256,9 @@ snapshots:
       - encoding
       - langchain
 
-  '@langchain/textsplitters@0.0.3(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
+  '@langchain/textsplitters@0.0.3(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)':
     dependencies:
-      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       js-tiktoken: 1.0.12
     transitivePeerDependencies:
       - langchain
@@ -1095,6 +1291,12 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
+  ansi-regex@5.0.1: {}
+
+  ansi-styles@4.3.0:
+    dependencies:
+      color-convert: 2.0.1
+
   ansi-styles@5.2.0: {}
 
   argparse@2.0.1: {}
@@ -1115,7 +1317,22 @@ snapshots:
 
   binary-search@1.3.6: {}
 
+  bindings@1.5.0:
+    dependencies:
+      file-uri-to-path: 1.0.0
+
+  bl@4.1.0:
+    dependencies:
+      buffer: 5.7.1
+      inherits: 2.0.4
+      readable-stream: 3.6.2
+
   boolbase@1.0.0: {}
+
+  buffer@5.7.1:
+    dependencies:
+      base64-js: 1.5.1
+      ieee754: 1.2.1
 
   camelcase@6.3.0: {}
 
@@ -1141,6 +1358,29 @@ snapshots:
       parse5-parser-stream: 7.1.2
       undici: 6.19.8
       whatwg-mimetype: 4.0.0
+
+  chownr@1.1.4: {}
+
+  chromadb@1.8.1(openai@4.53.2):
+    dependencies:
+      cliui: 8.0.1
+      isomorphic-fetch: 3.0.0
+    optionalDependencies:
+      openai: 4.53.2
+    transitivePeerDependencies:
+      - encoding
+
+  cliui@8.0.1:
+    dependencies:
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wrap-ansi: 7.0.0
+
+  color-convert@2.0.1:
+    dependencies:
+      color-name: 1.1.4
+
+  color-name@1.1.4: {}
 
   combined-stream@1.0.8:
     dependencies:
@@ -1168,7 +1408,15 @@ snapshots:
 
   decamelize@1.2.0: {}
 
+  decompress-response@6.0.0:
+    dependencies:
+      mimic-response: 3.1.0
+
+  deep-extend@0.6.0: {}
+
   delayed-stream@1.0.0: {}
+
+  detect-libc@2.0.3: {}
 
   dom-serializer@2.0.0:
     dependencies:
@@ -1190,10 +1438,16 @@ snapshots:
 
   dotenv@16.4.5: {}
 
+  emoji-regex@8.0.0: {}
+
   encoding-sniffer@0.2.0:
     dependencies:
       iconv-lite: 0.6.3
       whatwg-encoding: 3.1.1
+
+  end-of-stream@1.4.4:
+    dependencies:
+      once: 1.4.0
 
   entities@4.5.0: {}
 
@@ -1201,7 +1455,17 @@ snapshots:
 
   eventemitter3@4.0.7: {}
 
+  expand-template@2.0.3: {}
+
   expr-eval@2.0.2: {}
+
+  faiss-node@0.5.1:
+    dependencies:
+      bindings: 1.5.0
+      node-addon-api: 6.1.0
+      prebuild-install: 7.1.2
+
+  file-uri-to-path@1.0.0: {}
 
   flat@5.0.2: {}
 
@@ -1219,6 +1483,10 @@ snapshots:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 4.0.0-beta.3
+
+  fs-constants@1.0.0: {}
+
+  github-from-package@0.0.0: {}
 
   htmlparser2@9.1.0:
     dependencies:
@@ -1242,9 +1510,24 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
+  ieee754@1.2.1: {}
+
   ignore@5.3.2: {}
 
+  inherits@2.0.4: {}
+
+  ini@1.3.8: {}
+
   is-any-array@2.0.1: {}
+
+  is-fullwidth-code-point@3.0.0: {}
+
+  isomorphic-fetch@3.0.0:
+    dependencies:
+      node-fetch: 2.7.0
+      whatwg-fetch: 3.6.20
+    transitivePeerDependencies:
+      - encoding
 
   js-tiktoken@1.0.12:
     dependencies:
@@ -1256,17 +1539,17 @@ snapshots:
 
   jsonpointer@5.0.1: {}
 
-  langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)):
+  langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)):
     dependencies:
-      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
-      '@langchain/openai': 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
-      '@langchain/textsplitters': 0.0.3(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      '@langchain/openai': 0.2.5(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))
+      '@langchain/textsplitters': 0.0.3(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       binary-extensions: 2.3.0
       js-tiktoken: 1.0.12
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
       langchainhub: 0.0.11
-      langsmith: 0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langsmith: 0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
       ml-distance: 4.0.1
       openapi-types: 12.1.3
       p-retry: 4.6.2
@@ -1275,9 +1558,11 @@ snapshots:
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
-      '@langchain/community': 0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+      '@langchain/community': 0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
       axios: 1.7.3
       cheerio: 1.0.0
+      chromadb: 1.8.1(openai@4.53.2)
+      faiss-node: 0.5.1
       ignore: 5.3.2
       pdf-parse: 1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)
     transitivePeerDependencies:
@@ -1286,7 +1571,7 @@ snapshots:
 
   langchainhub@0.0.11: {}
 
-  langsmith@0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2):
+  langsmith@0.1.39(@langchain/core@0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -1294,11 +1579,11 @@ snapshots:
       p-retry: 4.6.2
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
-      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+      '@langchain/core': 0.2.18(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
       openai: 4.53.2
 
-  langsmith@0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2):
+  langsmith@0.1.39(@langchain/core@0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2))(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2):
     dependencies:
       '@types/uuid': 9.0.8
       commander: 10.0.1
@@ -1306,8 +1591,8 @@ snapshots:
       p-retry: 4.6.2
       uuid: 9.0.1
     optionalDependencies:
-      '@langchain/core': 0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
-      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
+      '@langchain/core': 0.2.24(langchain@0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(openai@4.53.2)
+      langchain: 0.2.11(@langchain/community@0.2.27(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi)))(axios@1.7.3)(cheerio@1.0.0)(chromadb@1.8.1(openai@4.53.2))(faiss-node@0.5.1)(ignore@5.3.2)(openai@4.53.2)(pdf-parse@1.1.1(patch_hash=cm436dfjcsvyvt43j2t6ijhxbi))
       openai: 4.53.2
 
   mime-db@1.52.0: {}
@@ -1315,6 +1600,12 @@ snapshots:
   mime-types@2.1.35:
     dependencies:
       mime-db: 1.52.0
+
+  mimic-response@3.1.0: {}
+
+  minimist@1.2.8: {}
+
+  mkdirp-classic@0.5.3: {}
 
   ml-array-mean@1.1.6:
     dependencies:
@@ -1343,6 +1634,14 @@ snapshots:
 
   mustache@4.2.0: {}
 
+  napi-build-utils@1.0.2: {}
+
+  node-abi@3.66.0:
+    dependencies:
+      semver: 7.6.3
+
+  node-addon-api@6.1.0: {}
+
   node-domexception@1.0.0: {}
 
   node-ensure@0.0.0: {}
@@ -1356,6 +1655,10 @@ snapshots:
       boolbase: 1.0.0
 
   num-sort@2.1.0: {}
+
+  once@1.4.0:
+    dependencies:
+      wrappy: 1.0.2
 
   openai@4.53.2:
     dependencies:
@@ -1407,17 +1710,99 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  prebuild-install@7.1.2:
+    dependencies:
+      detect-libc: 2.0.3
+      expand-template: 2.0.3
+      github-from-package: 0.0.0
+      minimist: 1.2.8
+      mkdirp-classic: 0.5.3
+      napi-build-utils: 1.0.2
+      node-abi: 3.66.0
+      pump: 3.0.0
+      rc: 1.2.8
+      simple-get: 4.0.1
+      tar-fs: 2.1.1
+      tunnel-agent: 0.6.0
+
   proxy-from-env@1.1.0: {}
+
+  pump@3.0.0:
+    dependencies:
+      end-of-stream: 1.4.4
+      once: 1.4.0
+
+  rc@1.2.8:
+    dependencies:
+      deep-extend: 0.6.0
+      ini: 1.3.8
+      minimist: 1.2.8
+      strip-json-comments: 2.0.1
+
+  readable-stream@3.6.2:
+    dependencies:
+      inherits: 2.0.4
+      string_decoder: 1.3.0
+      util-deprecate: 1.0.2
 
   retry@0.13.1: {}
 
+  safe-buffer@5.2.1: {}
+
   safer-buffer@2.1.2: {}
 
+  semver@7.6.3: {}
+
+  simple-concat@1.0.1: {}
+
+  simple-get@4.0.1:
+    dependencies:
+      decompress-response: 6.0.0
+      once: 1.4.0
+      simple-concat: 1.0.1
+
+  string-width@4.2.3:
+    dependencies:
+      emoji-regex: 8.0.0
+      is-fullwidth-code-point: 3.0.0
+      strip-ansi: 6.0.1
+
+  string_decoder@1.3.0:
+    dependencies:
+      safe-buffer: 5.2.1
+
+  strip-ansi@6.0.1:
+    dependencies:
+      ansi-regex: 5.0.1
+
+  strip-json-comments@2.0.1: {}
+
+  tar-fs@2.1.1:
+    dependencies:
+      chownr: 1.1.4
+      mkdirp-classic: 0.5.3
+      pump: 3.0.0
+      tar-stream: 2.2.0
+
+  tar-stream@2.2.0:
+    dependencies:
+      bl: 4.1.0
+      end-of-stream: 1.4.4
+      fs-constants: 1.0.0
+      inherits: 2.0.4
+      readable-stream: 3.6.2
+
   tr46@0.0.3: {}
+
+  tunnel-agent@0.6.0:
+    dependencies:
+      safe-buffer: 5.2.1
 
   undici-types@5.26.5: {}
 
   undici@6.19.8: {}
+
+  util-deprecate@1.0.2: {}
 
   uuid@10.0.0: {}
 
@@ -1431,12 +1816,22 @@ snapshots:
     dependencies:
       iconv-lite: 0.6.3
 
+  whatwg-fetch@3.6.20: {}
+
   whatwg-mimetype@4.0.0: {}
 
   whatwg-url@5.0.0:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
+
+  wrap-ansi@7.0.0:
+    dependencies:
+      ansi-styles: 4.3.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+
+  wrappy@1.0.2: {}
 
   yaml@2.5.0: {}
 
